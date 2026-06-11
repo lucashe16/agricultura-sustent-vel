@@ -1,0 +1,312 @@
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Transição suave ao clicar nos links do menu */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* Container para centralizar o conteúdo e dar margem nas laterais */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* Títulos das Seções */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    font-weight: 700;
+}
+
+/* Detalhe estético (linha verde) abaixo dos títulos das seções */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #2e7d32; /* Verde principal */
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   CABECALHO (HEADER)
+   ========================================================================== */
+.main-header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #2e7d32;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.main-nav a {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.main-nav a:hover {
+    color: #2e7d32;
+}
+
+/* ==========================================================================
+   SEÇÃO HERO (INÍCIO)
+   ========================================================================== */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Botão de Destaque */
+.btn-primary {
+    display: inline-block;
+    background-color: #2e7d32;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1b5e20;
+}
+
+/* ==========================================================================
+   SEÇÃO DE NOTÍCIAS
+   ========================================================================== */
+.news-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+/* Grid de 3 colunas para computadores */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.news-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px); /* Efeito de flutuar ao passar o mouse */
+}
+
+/* Imagens fictícias via CSS para os cards usando Unsplash */
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-news-1 { background-image: url('https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?auto=format&fit=crop&w=500&q=80'); }
+.bg-news-2 { background-image: url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=500&q=80'); }
+.bg-news-3 { background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=500&q=80'); }
+
+.card-content {
+    padding: 25px;
+}
+
+.category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #2e7d32;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.card-content p {
+    color: #666666;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+.read-more:hover {
+    color: #1b5e20;
+}
+
+/* ==========================================================================
+   SEÇÃO DA GALERIA
+   ========================================================================== */
+.gallery-section {
+    padding: 80px 0;
+}
+
+/* Layout de Grid para fotos */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 6px;
+    height: 250px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto preencha o espaço sem distorcer */
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Efeito de zoom suave */
+}
+
+/* ==========================================================================
+   RODAPÉ (FOOTER)
+   ========================================================================== */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-content p:first-child {
+    margin-bottom: 8px;
+}
+
+.footer-content p:last-child {
+    color: #888888;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Ajustes para Tablets e Telas Médias (Até 992px) */
+@media (max-width: 992px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr); /* Passa a ter 2 colunas */
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* Passa a ter 2 colunas */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Ajustes para Celulares (Até 600px) */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column; /* Alinha logo e menu verticalmente */
+        gap: 15px;
+    }
+
+    .hero-section {
+        height: 60vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr; /* 1 notícia por linha no celular */
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 1 foto por linha no celular */
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+}
